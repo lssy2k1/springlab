@@ -4,40 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b7d8a40-ad98-4d46-ba4a-67cdb9bf871b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01/src/main/java/com/kbstar/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01/src/main/java/com/kbstar/frame/TV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01/src/main/java/com/kbstar/tv/LTV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01/src/main/java/com/kbstar/tv/STV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02/src/main/java/com/kbstar/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02/src/main/java/com/kbstar/frame/TV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02/src/main/java/com/kbstar/tv/LTV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02/src/main/java/com/kbstar/tv/STV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day02/src/main/resources/spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day021/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day021/src/main/resources/spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/app/UserInsertTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/dao/UserMySQLDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/frame/MyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/frame/MyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/java/com/kbstar/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day022_XML/src/main/resources/spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day023_ANN/src/main/java/com/kbstar/dao/UserMySQLDAO.java" afterDir="false" />
+    <list default="true" id="9b7d8a40-ad98-4d46-ba4a-67cdb9bf871b" name="Changes" comment="0418 ioc &amp; AOP">
+      <change afterPath="$PROJECT_DIR$/day024_AOP/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/app/UserInsertTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/dao/UserMySQLDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/frame/LoggerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/frame/MyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/frame/MyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/java/com/kbstar/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day024_AOP/src/main/resources/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/day02/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/src/main/java/com/kbstar/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +35,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -74,7 +59,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/lssy2/IdeaProjects/hello-spring",
+    "last_opened_file_path": "C:/spring/springws",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,11 +76,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\spring\springlab\day024_AOP\src\main\java\com\kbstar\frame" />
       <recent name="C:\spring\springlab" />
       <recent name="C:\spring\springlab\day022\src\main\resources" />
       <recent name="C:\spring\springlab\day022\src\main\java\com\kbstar" />
       <recent name="C:\spring\springlab\day021\src\main\resources" />
-      <recent name="C:\spring\springlab\day02\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.kbstar.dao" />
@@ -110,12 +95,25 @@
       <option name="presentableId" value="Default" />
       <updated>1681777218202</updated>
       <workItem from="1681777219198" duration="7615000" />
-      <workItem from="1681792912358" duration="4120000" />
+      <workItem from="1681792912358" duration="7744000" />
     </task>
+    <task id="LOCAL-00001" summary="0418 ioc">
+      <created>1681798008267</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681798008268</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0418 ioc" />
+    <MESSAGE value="0418 ioc &amp; AOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="0418 ioc &amp; AOP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
