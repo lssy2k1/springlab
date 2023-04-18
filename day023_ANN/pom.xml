@@ -5,8 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kbstar</groupId>
-    <artifactId>day02</artifactId>
+    <artifactId>day023_ANN</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+<!--컴파일러와 라이브러리 버전-->
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -15,6 +17,8 @@
         <org.aspectj-version>1.6.5</org.aspectj-version>
         <org.slf4j-version>1.7.18</org.slf4j-version>
     </properties>
+
+<!--스프링 컨테이너 및 라이브러리 정보-->
     <dependencies>
         <!-- Spring -->
         <dependency>
@@ -91,4 +95,6 @@
 
 
     </dependencies>
+
+
 </project>
