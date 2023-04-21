@@ -2,23 +2,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script>
     //스크립트 언어는 위에서부터 실행되므로 onload가 반드시 필요함.
-    let login_form = {
-        init : function(){
-            $('#login_btn').click(function(){
-                login_form.send();
-            });
-        },
-        send : function(){
-            $('#login_form').attr({
-                'action':'/loginimpl',//MainController로 요청을 보낸다.
-                'method':'get'
-            });
-            $('#login_form').submit();
-        }
-    };
-    $(function(){
-        login_form.init()
-    });
+    // let login_form = {
+    //     init : function(){
+    //         $('#login_btn').click(function(){
+    //             login_form.send();
+    //         });
+    //     },
+    //     send : function(){
+    //         $('#login_form').attr({
+    //             'action':'/loginimpl',//MainController로 요청을 보낸다.
+    //             'method':'get'
+    //         });
+    //         $('#login_form').submit();
+    //     }
+    // };
+    // $(function(){
+    //     login_form.init()
+    // });
 </script>
 <div class="col-sm-8 text-left">
     <div class = "container">
