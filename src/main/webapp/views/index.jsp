@@ -14,6 +14,18 @@
     <script src="/js/index0421.js"></script>
 <%--    /js에서 /로 시작하지 않으면 현재 파일의 위치. jsp/jsp/js를 찾음. /를 씀으로 루트부터 찾게 시킴--%>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f15191dfbc91ce9a8cbdd265aeabcf7e"></script>
+<%--    chart01 --%>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<%--    char02 --%>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+
 
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
