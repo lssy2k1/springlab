@@ -1,9 +1,11 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
+import com.kbstar.service.CustService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,9 @@ import java.util.Random;
 public class CustController {
     //Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
     String dir = "cust/";
+
+    @Autowired
+    CustService custService;
     @RequestMapping("")
     public String main(Model model){
         model.addAttribute("left", dir + "left");
@@ -35,13 +40,14 @@ public class CustController {
         return "index";
     }
     @RequestMapping("/all")
-    public String all(Model model){
-        List<Cust> list = new ArrayList<>();
-        list.add(new Cust("id01","pwd01","james1"));
-        list.add(new Cust("id02","pwd02","james2"));
-        list.add(new Cust("id03","pwd03","james3"));
-        list.add(new Cust("id04","pwd04","james4"));
-        list.add(new Cust("id05","pwd05","james5"));
+    public String all(Model model)throws Exception{
+        List<Cust> list = null;
+        try {
+            list = custService.get();
+        } catch (Exception e) {
+//            log.info("error cust info");
+            throw new Exception("시스템 장애 : ER0001 : custcontroller에서 작성됨.");
+        }
         model.addAttribute("clist", list);
         model.addAttribute("left", dir + "left");
         model.addAttribute("center", dir + "all");

@@ -1,6 +1,6 @@
 package com.kbstar.frame;
 
-import org.springframework.transaction.annotation.Transactional;
+import com.kbstar.dto.MarkerDesc;
 
 import java.util.List;
 

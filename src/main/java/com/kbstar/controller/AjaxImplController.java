@@ -5,8 +5,11 @@ package com.kbstar.controller;
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Item;
 import com.kbstar.dto.Marker;
+import com.kbstar.service.CustService;
+import com.kbstar.service.MarkerService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,16 +20,24 @@ import java.util.Random;
 
 @RestController
 public class AjaxImplController {
+
+    @Autowired
+    MarkerService markerService;
+    @Autowired
+    CustService custService;
+
     @RequestMapping("/getservertime")
     public Object getservertime(){
         Date date = new Date();
         return date;
     }
     @RequestMapping("/checkid")
-    public Object checkid(String id){
+    public Object checkid(String id) throws Exception {
         int result = 0;//중복 아니면 0 보낸다고 가정
-        if(id.equals("qqqq") || id.equals("aaaa") || id.equals("ssss")){
-            result = 1;//중복은 세개밖에 없다고 가정
+        Cust cust = null;
+        cust = custService.get(id);
+        if(cust != null){
+            result = 1;
         }
         return result;
     }
@@ -55,21 +66,14 @@ public class AjaxImplController {
         return ja;
     }
     @RequestMapping("/markers")
-    public Object markers(String loc){
-        List<Marker> list = new ArrayList<>();
-        if(loc.equals("s")){
-            list.add(new Marker(100, "피자헛", "http://www.nate.com", 37.5766686, 127.0722721, "a.jpg", "s"));
-            list.add(new Marker(101, "파파존스", "http://www.naver.com", 37.5066686, 127.0700721, "b.jpg", "s"));
-            list.add(new Marker(102, "오뚜기", "http://www.daum.com", 37.5760086, 127.0722700, "c.jpg", "s"));
-        }else if(loc.equals("b")){
-            list.add(new Marker(103, "부산헛", "http://www.nate.com", 35.1531696, 129.110066, "a.jpg", "b"));
-            list.add(new Marker(104, "부산존스", "http://www.naver.com", 35.1500696, 129.108666, "b.jpg", "b"));
-            list.add(new Marker(105, "부산뚜기", "http://www.daum.com", 35.1031696, 129.118600, "c.jpg", "b"));
-        }else if(loc.equals("j")){
-            list.add(new Marker(106, "제주헛", "http://www.nate.com", 33.2001708, 126.5036786, "a.jpg", "j"));
-            list.add(new Marker(107, "제주스", "http://www.naver.com", 33.2500708, 126.563086, "b.jpg", "j"));
-            list.add(new Marker(108, "제주뚜기", "http://www.daum.com", 33.2501008, 126.563670, "c.jpg", "j"));
+    public Object markers(String loc) throws Exception {
+        List<Marker> list = null;
+        try {
+            list = markerService.getLoc(loc);
+        } catch (Exception e) {
+            throw new Exception("시스템에러 : ER0003 : ajaximplcontroller에서 작성됨");
         }
+
         JSONArray ja = new JSONArray();
         for (Marker obj:list) {
             JSONObject jo = new JSONObject();
