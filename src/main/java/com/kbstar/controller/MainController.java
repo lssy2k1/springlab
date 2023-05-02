@@ -6,9 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 @Slf4j
 @Controller
@@ -16,6 +19,9 @@ public class MainController {
 
     @Autowired
     CustService custService;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
     public String main(){
@@ -27,10 +33,55 @@ public class MainController {
         model.addAttribute("center", "login");//{center}에 login을 뿌려줘라.
         return "index";
     }
+    @RequestMapping("/custinfo")
+    public String custinfo(Model model, String id) throws Exception {
+        Cust cust = null;
+        try {
+            cust = custService.get(id);
+        } catch (Exception e) {
+            throw new Exception("시스템장애 custinfo 호출 오류");
+        }
+        model.addAttribute("custinfo", cust);//화면에 뿌릴 정보를 준비
+        model.addAttribute("center", "custinfo");//화면에 정보를 뿌림
+        return "index";
+    }
+    @RequestMapping("/custinfoimpl")
+    public String custinfoimpl(Model model, Cust cust) throws Exception {
+        try {
+            log.info("===================="+cust.getPwd());
+            cust.setPwd(encoder.encode(cust.getPwd()));
+            log.info("===================="+cust.getPwd());
+            custService.modify(cust);
+        } catch (Exception e) {
+            throw new Exception("시스템장애 custinfo 호출 오류");
+        }
+        return "redirect:/custinfo?id="+cust.getId();
+    }
+
+    @RequestMapping("/logout")
+    public String logout(Model model, HttpSession session){
+        if(session != null){
+            session.invalidate();
+        }
+        return "index";
+    }
     @RequestMapping("/loginimpl")
-    public String loginimpl(Model model, String id, String pwd){
-        log.info("--------------"+id+" "+pwd);
-        model.addAttribute("center", "login");//{center}에 login을 뿌려줘라.
+    public String loginimpl(Model model, String id, String pwd, HttpSession session) throws Exception {
+        log.info("--------------------------"+id+" "+pwd);
+        Cust cust = null;
+        String nextPage = "loginfail";
+        try {
+            cust = custService.get(id);
+            if (cust != null && encoder.matches(pwd,cust.getPwd())){
+                nextPage = "loginok";
+                session.setMaxInactiveInterval(1000000);
+                session.setAttribute("logincust",cust);
+                //session에 넣어둔 정보도, model에서 꺼내는 것 처럼 꺼내서 쓸수있다.
+            }
+        } catch (Exception e) {
+            throw new Exception("시스템 장애. 잠시후 다시 로그인 시도하세요. loginimpl");
+        }
+        model.addAttribute("center", nextPage);//{center}에 login을 뿌려줘라.
         return "index";
     }
     @RequestMapping("/register")
@@ -39,9 +90,12 @@ public class MainController {
         return "index";
     }
     @RequestMapping("/registerimpl")
-    public String registerimpl(Model model, Cust cust) throws Exception {
+    public String registerimpl(Model model, Cust cust, HttpSession session) throws Exception {
         try {
+            cust.setPwd(encoder.encode(cust.getPwd()));
             custService.register(cust);
+            session.setMaxInactiveInterval(1000000);
+            session.setAttribute("logincust", cust);
         } catch (Exception e) {
             throw new Exception("시스템에러 : maincontroller registerimpl");
         }

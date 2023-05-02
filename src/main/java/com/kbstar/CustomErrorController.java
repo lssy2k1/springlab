@@ -1,4 +1,4 @@
-package com.kbstar.controller;
+package com.kbstar;
 
 
 import org.springframework.ui.Model;

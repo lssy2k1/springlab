@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder encodePWD() {
         return new BCryptPasswordEncoder();
     }
-    @Override
+    @Override//CORS를 허용하기 위해서
     protected void configure(HttpSecurity http) throws Exception {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin(CorsConfiguration.ALL);

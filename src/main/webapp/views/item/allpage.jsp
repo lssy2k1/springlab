@@ -23,7 +23,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="obj" items="${allitem}">
+                    <c:forEach var="obj" items="${cpage.getList()}">
+<%--                        cpage는 어레이가 아니라 pageinfo라서 안돈다. getList로 어레이리스트를 만들어야 돈다      --%>
                         <tr>
                             <td><img src = "/img/${obj.imgname}" class = "small_img"></td>
                             <td>${obj.id}</td>
@@ -34,6 +35,7 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <jsp:include page="../page.jsp"/>
             </div>
         </div><!-- row content end-->
     </div>

@@ -10,7 +10,7 @@
                     <thead>
                     <tr>
                         <th>id</th>
-                        <th>pwd</th>
+<%--                        <th>pwd</th>--%>
                         <th>name</th>
                     </tr>
                     </thead>
@@ -18,7 +18,7 @@
                     <c:forEach var="c" items="${clist}">
                         <tr>
                             <td><a href="/cust/get?id=${c.id}">${c.id}</a></td>
-                            <td><a href="">${c.pwd}</a></td>
+<%--                            <td><a href="">${c.pwd}</a></td>--%>
                             <td><a href="">${c.name}</a></td>
                         </tr>
                     </c:forEach>
