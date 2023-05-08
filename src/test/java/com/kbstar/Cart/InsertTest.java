@@ -21,15 +21,10 @@ class InsertTest {
     CartService service;
     @Test
     void contextLoads() {
-        Cart obj = new Cart("id21", 102, 2220);
-        Cart obj1 = new Cart("id21", 102, 2220);
-        Cart obj2 = new Cart("id21", 102, 2220);
-        Cart obj3 = new Cart("id21", 102, 2220);
+        Cart obj = new Cart("id01", 101, -22220);
+
         try {
             service.register(obj);
-            service.register(obj1);
-            service.register(obj2);
-            service.register(obj3);
             service.get();
             log.info("등록정상");
         } catch (Exception e) {

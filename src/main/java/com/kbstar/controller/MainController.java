@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,11 @@ public class MainController {
     @RequestMapping("/login")
     public String login(Model model){
         model.addAttribute("center", "login");//{center}에 login을 뿌려줘라.
+        return "index";
+    }
+    @RequestMapping("/pic")
+    public String pic(Model model){
+        model.addAttribute("center", "pic");
         return "index";
     }
     @RequestMapping("/custinfo")
@@ -109,4 +115,9 @@ public class MainController {
         return page;
     }
 
+    @RequestMapping("/websocket")
+    public String websocket(Model model){
+        model.addAttribute("center", "websocket");
+        return "index";
+    }
 }

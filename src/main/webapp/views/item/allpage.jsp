@@ -27,9 +27,9 @@
 <%--                        cpage는 어레이가 아니라 pageinfo라서 안돈다. getList로 어레이리스트를 만들어야 돈다      --%>
                         <tr>
                             <td><img src = "/img/${obj.imgname}" class = "small_img"></td>
-                            <td>${obj.id}</td>
+                            <td><a href = "/item/get?id=${obj.id}">${obj.id}</a></td>
                             <td>${obj.name}</td>
-                            <td><fmt:formatNumber value="${obj.price}" type="currency" /></td>
+                            <td><fmt:formatNumber value="${obj.price}" pattern = "###,###원" /></td>
                             <td><fmt:formatDate  value="${obj.rdate}" pattern="yyyy-MM-dd:HH:mm:ss"/></td>
                         </tr>
                     </c:forEach>

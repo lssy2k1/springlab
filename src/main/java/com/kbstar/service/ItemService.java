@@ -49,7 +49,7 @@ public class ItemService implements KBService<Integer, Item> {
         return mapper.selectall();
     }
     public Page<Item> getPage(int pageNo) throws Exception {
-        PageHelper.startPage(pageNo, 1); // 3: 한화면에 출력되는 개수
+        PageHelper.startPage(pageNo, 5); // 3: 한화면에 출력되는 개수
         return mapper.getpage();
     }
 }

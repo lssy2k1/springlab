@@ -25,7 +25,9 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
-
+<%-- 웹소켓이야~--%>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
@@ -100,6 +102,9 @@
                     <c:otherwise>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href ="/custinfo?id=${logincust.id}">${logincust.id}</a></li>
+                            <li><a href ="/item/allcart?id=${logincust.id}">
+                                <span class="glyphicon glyphicon-shopping-cart">CART</span></a>
+                            </li>
                             <li><a href="/logouts"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
                     </c:otherwise>
