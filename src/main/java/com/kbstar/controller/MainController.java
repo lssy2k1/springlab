@@ -18,6 +18,9 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class MainController {
 
+    @Value("${adminserver")
+    String adminserver;
+
     @Autowired
     CustService custService;
 
@@ -117,6 +120,7 @@ public class MainController {
 
     @RequestMapping("/websocket")
     public String websocket(Model model){
+        model.addAttribute("adminserver",adminserver);
         model.addAttribute("center", "websocket");
         return "index";
     }
