@@ -28,7 +28,31 @@
 <%-- 웹소켓이야~--%>
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-
+<script>
+    let chatbtn = {
+        init:function(){
+            const scrollBtn = document.createElement("button");
+            scrollBtn.innerHTML = "chatbot";
+            scrollBtn.setAttribute("id", "scroll-btn");
+            document.body.appendChild(scrollBtn);
+            scrollBtn.classList.add("show");
+            scrollBtn.addEventListener("click", function(){
+                location.href='/login';
+            });
+            const scrollBtn2 = document.createElement("button");
+            scrollBtn2.innerHTML = "1:1";
+            scrollBtn2.setAttribute("id", "scroll-btn2");
+            document.body.appendChild(scrollBtn2);
+            scrollBtn2.classList.add("show");
+            scrollBtn2.addEventListener("click", function(){
+                location.href='/login';
+            });
+        }
+    };
+    $(function(){
+        chatbtn.init();
+    });
+</script>
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -60,6 +84,42 @@
                 padding: 15px;
             }
             .row.content {height:auto;}
+        }
+        #scroll-btn {
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            background-color: #ef476f;
+            position: fixed;
+            bottom: 13%;
+            right: 10%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            font: 2px monospace;
+            transition: opacity 2s, transform 2s;
+        }
+        #scroll-btn.show {
+            opacity: 1;
+            transition: opacity 5s, transform 5s;
+        }
+        #scroll-btn2 {
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            background-color: #ef476f;
+            position: fixed;
+            bottom: 5%;
+            right: 10%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            font: bold 10px monospace;
+            transition: opacity 2s, transform 2s;
+        }
+        #scroll-btn2.show {
+            opacity: 1;
+            transition: opacity 5s, transform 5s;
         }
     </style>
 </head>
@@ -150,6 +210,7 @@
 
 <footer class="container-fluid text-center">
     <p>Footer Text</p>
+
 </footer>
 
 </body>

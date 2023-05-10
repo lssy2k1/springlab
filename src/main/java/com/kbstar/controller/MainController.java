@@ -2,6 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
 import com.kbstar.service.CustService;
+import com.kbstar.util.WeatherUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,9 @@ public class MainController {
     private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
-    public String main(){
+    public String main(Model model) throws Exception {
+        String result = WeatherUtil.getWeather1("108");
+        model.addAttribute("weatherinfo", result);
         return "index";
     }
 
