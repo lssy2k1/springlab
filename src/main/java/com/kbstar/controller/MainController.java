@@ -40,6 +40,16 @@ public class MainController {
         model.addAttribute("center", "login");//{center}에 login을 뿌려줘라.
         return "index";
     }
+    @RequestMapping("/cfr1")
+    public String cfr1(Model model){
+        model.addAttribute("center", "cfr1");//{center}에 login을 뿌려줘라.
+        return "index";
+    }
+    @RequestMapping("/cfr2")
+    public String cfr2(Model model){
+        model.addAttribute("center", "cfr2");//{center}에 login을 뿌려줘라.
+        return "index";
+    }
     @RequestMapping("/pic")
     public String pic(Model model){
         model.addAttribute("center", "pic");

@@ -7,32 +7,32 @@
         border: 2px solid red;
     }
 </style>
-<script>
-    let center ={
-        init:function(){
-            $.ajax({
-                url:'/weather2',
-                success:function(data){
-                    center.display(data)
-                    // alert(data);
-                }
-            });
-        }, display: function(data){
-            var result = data.response.body.items.item;
-            var txt = '';
-            $(result).each(function(index, item){
-                txt += '<h5>'
-                txt += item.tm + ' ' + item.ta;
-                txt += '</h5>'
-            });
+<%--<script>--%>
+<%--    let center ={--%>
+<%--        init:function(){--%>
+<%--            $.ajax({--%>
+<%--                url:'/weather2',--%>
+<%--                success:function(data){--%>
+<%--                    center.display(data)--%>
+<%--                    // alert(data);--%>
+<%--                }--%>
+<%--            });--%>
+<%--        }, display: function(data){--%>
+<%--            var result = data.response.body.items.item;--%>
+<%--            var txt = '';--%>
+<%--            $(result).each(function(index, item){--%>
+<%--                txt += '<h5>'--%>
+<%--                txt += item.tm + ' ' + item.ta;--%>
+<%--                txt += '</h5>'--%>
+<%--            });--%>
 
-            $('#w2').html(txt);
-        }
-    }
-    $(function(){
-        center.init();
-    })
-</script>
+<%--            $('#w2').html(txt);--%>
+<%--        }--%>
+<%--    }--%>
+<%--    $(function(){--%>
+<%--        center.init();--%>
+<%--    })--%>
+<%--</script>--%>
 
 <div class="col-sm-8 text-left">
     <h1><spring:message code="site.title"/></h1>

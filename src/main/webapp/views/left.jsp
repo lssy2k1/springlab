@@ -7,4 +7,6 @@
         <p><a href="/websocket">webSocket</a></p>
     </c:if>
     <p><a href="#">Link</a></p>
+    <p><a href="/cfr1">CFR1</a></p>
+    <p><a href="/cfr2">CFR2</a></p>
 </div>
