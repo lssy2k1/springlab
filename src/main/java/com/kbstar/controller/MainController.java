@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class MainController {
 
-    @Value("${adminserver")
+    @Value("${adminserver}")
     String adminserver;
 
     @Autowired
@@ -145,6 +145,24 @@ public class MainController {
     public String websocket(Model model){
         model.addAttribute("adminserver",adminserver);
         model.addAttribute("center", "websocket");
+        return "index";
+    }
+    @RequestMapping("/chatbot")
+    public String chatbot(Model model, HttpSession session){
+        if(session.getAttribute("logincust") ==null){
+            return "redirect:/login";
+        }
+        model.addAttribute("adminserver",adminserver);//어떠한 서버의 챗봇서버로 접속할지! 중요함
+        model.addAttribute("center", "chatbot");
+        return "index";
+    }
+    @RequestMapping("/callcenter")
+    public String callcenter(Model model, HttpSession session){
+        if(session.getAttribute("logincust") ==null){
+            return "redirect:/login";
+        }
+        model.addAttribute("adminserver",adminserver);
+        model.addAttribute("center", "callcenter");
         return "index";
     }
 }
