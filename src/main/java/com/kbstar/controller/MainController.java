@@ -98,7 +98,7 @@ public class MainController {
         return "index";
     }
     @RequestMapping("/loginimpl")
-    public String loginimpl(Model model, String id, String pwd, HttpSession session) throws Exception {
+    public String loginimpl(Model model, String id, String pwd, HttpSession session, String redirectURL) throws Exception {
         log.info("--------------------------"+id+" "+pwd);
         Cust cust = null;
         String nextPage = "loginfail";
@@ -108,6 +108,11 @@ public class MainController {
                 nextPage = "loginok";
                 session.setMaxInactiveInterval(1000000);
                 session.setAttribute("logincust",cust);
+                if(redirectURL ==null || redirectURL.equals("")){
+                    return "redirect:/";
+                }else{
+                    return "redirect:"+redirectURL;
+                }
                 //session에 넣어둔 정보도, model에서 꺼내는 것 처럼 꺼내서 쓸수있다.
             }
         } catch (Exception e) {
